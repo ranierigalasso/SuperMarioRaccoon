@@ -11,7 +11,7 @@ The MVP version will be the first level of the game: a player and an array of en
 player needs to make it fly using the space bar. Top of the canvas cannot be accessed and if Mario falls below canvas it is game over.
 
 ## Backlog
-- Istructions button & screen
+- Instructions button & instruction screen
 - Highscore (using local storage)
 - Add stars and stars counter on game screen
 - Add mushrooms and lives counter on game screen
@@ -105,34 +105,29 @@ Definition of the different states and their transition (transition functions)
 - gameOver()
   - destroyGame()
   - buildGameOver()
-  - addEventListener(starGame) 
+  - addEventListener(startGame) 
 ```
 
 ## Task
 - create files javascript
-- Main - buildDom
-- Main - buildSplash
-- Main - addEventListener
+- Main - on website load buildSplash
+- Main - addEventListener to "start game" button
 - Main - destroySplash
-- Game - buildDom
-- Game - TimeOut test
-- Main - GameOver
-- Main - destroy Game
-- Main - GameOver RESTART
-- Main - removeGameOver
-- Game - addEventListener
-- Game - create player
-- Player - create
-- Player - directions
-- Game - loop
-- Game - player and enemies position 
-- Game - clear
-- Game - create enemies
-- Enemy - create
-- Enemy - check if still in screen
-- Game - collision + remove
-- Game - lives 
-- Game - gameOver
+- Main - buildGame
+- Main - create instance of a new Game and start the game
+- Main - game over functionality
+- Main - build GameOverScreen 
+- Main - addEventListner to "restart" the game
+- Game - start loop which draws frames of player and enemies
+- Game - create instances of player and array of enemies
+- Game - randomize position and speed of enemies using forEach
+- Game - set direction of player on spacebar keyNote
+- Game - end animationFrame when game is over
+- Player - draw the player
+- Player - remove lifes from player
+- Enemy - draw the enemy
+- Enemy - if enemy is outside screen remove enemy from array
+ 
 
 ## Links
 
