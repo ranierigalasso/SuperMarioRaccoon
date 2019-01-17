@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 20%;
   padding: 0;
   background-color: black;
 }
@@ -16,21 +16,48 @@ body {
 
 /* ---- Splash Screen ---- */
 .splash-screen {
-  text-align: center
+  text-align: center;
 }
-.splash-screen h1  {
+#background {
+  width: 100%;
+  height: 100%;
+}
+#title {
   position: absolute;
-  top: 10%;
-  left: 20%;
+  top: 60%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
 }
 .splash-screen button  {
   position: absolute;
-  top: 50%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 /* ---- Game Screen ---- */
-
+.game-screen {
+  text-align: center;
+}
+#canvas {
+  background-color: white;
+  
+}
 
 /* ---- Game Over Screen ---- */
+.game-over-screen {
+  text-align: center;
+}
+.game-over-screen img {
+  border: 1px solid white;
+  width: 100%;
+  height: 100%;
+}
+.game-over-screen button {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
