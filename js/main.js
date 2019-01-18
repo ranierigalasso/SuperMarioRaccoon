@@ -15,6 +15,10 @@ function destroyDom (target) {
   target.innerHTML = ""; 
 }
 
+function gameIsOver () {
+  destroyDom(gameScreen);
+  loadGameOverScreen();
+}
 //---------------------- Build the 3 different screens and transitions---------------------- 
 function loadSplashScreen () {
   splashScreen = buildDom (`
@@ -33,12 +37,12 @@ function loadGameScreen () {
   gameScreen = buildDom(`
     <div class="game-screen">
       <canvas id="canvas" width="800" height="800"></canvas>
-      <button id="game-over">GAMEOVER</button>
     </div>
   `);
 
   var canvas = document.getElementById("canvas");
   var game = new Game(canvas);
+  game.gameIsOverCallback(gameIsOver);
 
   var onSpaceBar = function (event) {
     if(event.keyCode === 32){
@@ -50,10 +54,16 @@ function loadGameScreen () {
   document.addEventListener("keydown", onSpaceBar);
   game.startGame();
 
-  gameScreen.querySelector("#game-over").addEventListener("click", function () {
-    destroyDom(gameScreen);
-    loadGameOverScreen();
-  });
+
+  //console.log(game.gameOverHandler());
+  //if(game.gameOverHandler() === true) {
+  //  destroyDom(gameScreen);
+  //  loadGameOverScreen();
+  //}
+  //gameScreen.querySelector("#game-over").addEventListener("click", function () {
+  //  destroyDom(gameScreen);
+  //  loadGameOverScreen();
+  //});
 }
 function loadGameOverScreen () {
   gameOverScreen = buildDom (`

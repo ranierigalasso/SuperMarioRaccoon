@@ -6,6 +6,7 @@ function Game (canvas) {
   this.ctx = canvas.getContext('2d');
   this.player = new Player(canvas);
   this.animation;
+  this.gameOver;
 }
 
 //---------------------- Methods ---------------------- 
@@ -18,6 +19,10 @@ Game.prototype.clearCanvas = function () {
 Game.prototype.updateGame = function () {
   this.player.update();
 }
+Game.prototype.gameIsOverCallback = function (gameIsOver) {
+  this.gameOver = gameIsOver;
+}
+
 Game.prototype.startGame = function () {
   function loop () {
     //update game instances
@@ -26,12 +31,14 @@ Game.prototype.startGame = function () {
     this.clearCanvas();
     //paint
     this.drawCanvas();
-    
+
     this.animation = window.requestAnimationFrame(loop.bind(this));
+
     //check for gameover
     if(this.player.isDead()) {
       console.log("gameover");
-      this.stopGame();
+      this.gameOver();
+      window.cancelAnimationFrame(this.animation);
     }
   }
   window.requestAnimationFrame(loop.bind(this));
@@ -40,6 +47,4 @@ Game.prototype.spaceBar = function () {
   this.player.setDirection(1);
   this.player.y -= 100;
 }
-Game.prototype.stopGame = function () {
-  window.cancelAnimationFrame(this.animation);
-}
+

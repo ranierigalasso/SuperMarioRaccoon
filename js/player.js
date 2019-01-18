@@ -30,8 +30,12 @@ Player.prototype.setDirection = function (direction) {
 }
 Player.prototype.isDead = function () {
   if(this.lifes <= 0){
+    console.log('hey im in');
     return true;
-  } else if (this.y > this.canvas.height + 100) {
+  } else if (this.y > this.canvas.height + (this.size/2)) {
+    console.log('hey im in');
     return true;
+  } else {
+    return false;
   }
 }
