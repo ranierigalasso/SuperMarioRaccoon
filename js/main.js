@@ -1,39 +1,64 @@
 "use strict";
 
+//---------------------- Global variables ---------------------- 
+var splashScreen;
+var gameScreen;
+var gameOverScreen;
 
-//build Screens & load the Game (STATES TRANSITION)
+//---------------------- Build and destroy current DOM ---------------------- 
 function buildDom (html) {
-  var target = document.querySelector(".container"); //we select the container
-  target.innerHTML = html; //we change the html of the container equal to the html parameter we hand it
-  return target; //we return this new html inside the container
+  var target = document.querySelector(".container"); 
+  target.innerHTML = html; 
+  return target; 
 }
+function destroyDom (target) {
+  target.innerHTML = ""; 
+}
+
+//---------------------- Build the 3 different screens---------------------- 
 function loadSplashScreen () {
-  buildDom (`
+  splashScreen = buildDom (`
     <div class="splash-screen">
       <img id="background" src="./images/splashScreen.jpg" alt="splash-screen">
       <img id="title" src="./images/title.png" alt="splash-title">
-      <button>CLICK HERE TO START</button>
+      <button id="start-button">CLICK HERE TO START</button>
     </div>
   `);
+  splashScreen.querySelector("#start-button").addEventListener("click", function () {
+    destroyDom(splashScreen);
+    loadGameScreen();
+  });
 }
 function loadGameScreen () {
-  buildDom(`
+  gameScreen = buildDom(`
     <div class="game-screen">
       <canvas id="canvas" width="800" height="800"></canvas>
+      <button id="game-over">GAMEOVER</button>
     </div>
   `);
+  gameScreen.querySelector("#game-over").addEventListener("click", function () {
+    destroyDom(gameScreen);
+    loadGameOverScreen();
+  });
 }
 function loadGameOverScreen () {
-  buildDom (`
+  gameOverScreen = buildDom (`
     <div class="game-over-screen">
       <img src="./images/gameOverScreen.jpg" alt="game-over-screen">
-      <button>RESTART</button>
+      <button id="restart-button">RESTART</button>
     </div>
   `);
+  gameOverScreen.querySelector("#restart-button").addEventListener("click", function () {
+    destroyDom(gameOverScreen);
+    loadGameScreen();
+  });
 }
+
+//---------------------- Load the splashscreen on website load ---------------------- 
 function loadGame () {
   loadSplashScreen();
 }
 
-//On website load the load game function is called and the splashscreen is loaded
+//---------------------- Starting website load ---------------------- 
 window.addEventListener("load",loadGame);
+
