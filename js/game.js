@@ -5,7 +5,7 @@ function Game (canvas) {
   this.canvas = canvas; 
   this.ctx = canvas.getContext('2d');
   this.player = new Player(canvas);
-  
+  this.animation;
 }
 
 //---------------------- Methods ---------------------- 
@@ -27,11 +27,19 @@ Game.prototype.startGame = function () {
     //paint
     this.drawCanvas();
     
-    window.requestAnimationFrame(loop.bind(this));
+    this.animation = window.requestAnimationFrame(loop.bind(this));
+    //check for gameover
+    if(this.player.isDead()) {
+      console.log("gameover");
+      this.stopGame();
+    }
   }
   window.requestAnimationFrame(loop.bind(this));
 }
 Game.prototype.spaceBar = function () {
   this.player.setDirection(1);
   this.player.y -= 100;
+}
+Game.prototype.stopGame = function () {
+  window.cancelAnimationFrame(this.animation);
 }

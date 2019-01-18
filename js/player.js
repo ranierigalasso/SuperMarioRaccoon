@@ -21,11 +21,17 @@ Player.prototype.draw = function () {
 Player.prototype.update = function () {
   this.y += this.direction * this.speed;
   if (this.y <= 0) {
-    //past the top of canvas
-    this.y += 50;
+    //if past the top of canvas push mario down
+    this.y += 10;
   } 
 }
 Player.prototype.setDirection = function (direction) {
   this.direction = direction;
 }
-
+Player.prototype.isDead = function () {
+  if(this.lifes <= 0){
+    return true;
+  } else if (this.y > this.canvas.height + 100) {
+    return true;
+  }
+}
