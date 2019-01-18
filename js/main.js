@@ -39,7 +39,16 @@ function loadGameScreen () {
 
   var canvas = document.getElementById("canvas");
   var game = new Game(canvas);
-  game.start();
+
+  var onSpaceBar = function (event) {
+    if(event.keyCode === 32){
+      console.log(event.keyCode);
+      game.spaceBar();
+    }
+  }
+
+  document.addEventListener("keydown", onSpaceBar);
+  game.startGame();
 
   gameScreen.querySelector("#game-over").addEventListener("click", function () {
     destroyDom(gameScreen);

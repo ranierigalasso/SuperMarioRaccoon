@@ -18,6 +18,14 @@ function Player (canvas) {
 Player.prototype.draw = function () {
   this.ctx.drawImage(this.playerImage, this.x, this.y, this.size, this.size);
 }
-// Player.prototype
-// Player.prototype
-// Player.prototype
+Player.prototype.update = function () {
+  this.y += this.direction * this.speed;
+  if (this.y <= 0) {
+    //past the top of canvas
+    this.y += 50;
+  } 
+}
+Player.prototype.setDirection = function (direction) {
+  this.direction = direction;
+}
+
