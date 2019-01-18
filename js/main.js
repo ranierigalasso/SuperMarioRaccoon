@@ -40,7 +40,7 @@ function loadGameScreen () {
   var canvas = document.getElementById("canvas");
   var game = new Game(canvas);
   game.start();
-  
+
   gameScreen.querySelector("#game-over").addEventListener("click", function () {
     destroyDom(gameScreen);
     loadGameOverScreen();

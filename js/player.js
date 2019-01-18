@@ -10,12 +10,15 @@ function Player (canvas) {
   this.y = (canvas.height - this.size)/2; //to place mario in the middle at beggining of the game, it will change once it starts
   this.direction = 0;
   this.speed = 5;
+  this.playerImage = new Image();
+  this.playerImage.src = "./images/mario-raccoon.png";
 }
 
 //---------------------- Methods ---------------------- 
 Player.prototype.draw = function () {
-  this.ctx.fillRect(this.x, this.y,this.size, this.size);
+  //this.ctx.fillRect(this.x, this.y,this.size, this.size);
+  this.ctx.drawImage(this.playerImage, this.x, this.y, this.size, this.size);
 }
-Player.prototype
-Player.prototype
-Player.prototype
+// Player.prototype
+// Player.prototype
+// Player.prototype
