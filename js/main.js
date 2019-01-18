@@ -15,7 +15,7 @@ function destroyDom (target) {
   target.innerHTML = ""; 
 }
 
-//---------------------- Build the 3 different screens---------------------- 
+//---------------------- Build the 3 different screens and transitions---------------------- 
 function loadSplashScreen () {
   splashScreen = buildDom (`
     <div class="splash-screen">
