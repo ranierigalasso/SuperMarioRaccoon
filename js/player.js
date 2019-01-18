@@ -16,7 +16,6 @@ function Player (canvas) {
 
 //---------------------- Methods ---------------------- 
 Player.prototype.draw = function () {
-  //this.ctx.fillRect(this.x, this.y,this.size, this.size);
   this.ctx.drawImage(this.playerImage, this.x, this.y, this.size, this.size);
 }
 // Player.prototype
