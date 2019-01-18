@@ -50,7 +50,7 @@ Game.prototype.fly () {
 ### player.js
 ```javascript
 Player(canvas, lives) {
-  this.x
+  this.x 
   this.y
   this.direction 0
   this.size

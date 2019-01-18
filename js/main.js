@@ -36,6 +36,11 @@ function loadGameScreen () {
       <button id="game-over">GAMEOVER</button>
     </div>
   `);
+
+  var canvas = document.getElementById("canvas");
+  var game = new Game(canvas);
+  game.start();
+  
   gameScreen.querySelector("#game-over").addEventListener("click", function () {
     destroyDom(gameScreen);
     loadGameOverScreen();
