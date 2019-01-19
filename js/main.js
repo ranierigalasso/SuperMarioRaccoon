@@ -10,15 +10,11 @@ function buildDom (html) {
   var target = document.querySelector(".container"); 
   target.innerHTML = html; 
   return target; 
-}
+} 
 function destroyDom (target) {
   target.innerHTML = ""; 
 }
 
-function gameIsOver () {
-  destroyDom(gameScreen);
-  loadGameOverScreen();
-}
 //---------------------- Build the 3 different screens and transitions---------------------- 
 function loadSplashScreen () {
   splashScreen = buildDom (`
@@ -32,6 +28,10 @@ function loadSplashScreen () {
     destroyDom(splashScreen);
     loadGameScreen();
   });
+}
+function gameIsOver () {
+  destroyDom(gameScreen);
+  loadGameOverScreen();
 }
 function loadGameScreen () {
   gameScreen = buildDom(`
@@ -54,16 +54,6 @@ function loadGameScreen () {
   document.addEventListener("keydown", onSpaceBar);
   game.startGame();
 
-
-  //console.log(game.gameOverHandler());
-  //if(game.gameOverHandler() === true) {
-  //  destroyDom(gameScreen);
-  //  loadGameOverScreen();
-  //}
-  //gameScreen.querySelector("#game-over").addEventListener("click", function () {
-  //  destroyDom(gameScreen);
-  //  loadGameOverScreen();
-  //});
 }
 function loadGameOverScreen () {
   gameOverScreen = buildDom (`

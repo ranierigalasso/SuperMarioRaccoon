@@ -47,7 +47,7 @@ body {
 }
 @-webkit-keyframes slide {
   from { background-position: 0 0; }
-  to { background-position: -5000px 0; }
+  to { background-position: -4000px 0; }
 }
 
 /* ---- Game Over Screen ---- */

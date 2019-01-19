@@ -30,12 +30,22 @@ Player.prototype.setDirection = function (direction) {
 }
 Player.prototype.isDead = function () {
   if(this.lifes <= 0){
-    console.log('hey im in');
     return true;
   } else if (this.y > this.canvas.height + (this.size/2)) {
-    console.log('hey im in');
     return true;
   } else {
     return false;
-  }
+  } 
+}
+Player.prototype.checkCollideWithEnemy = function(enemy) {
+  var collidesRight = this.x + this.size / 2 > enemy.x - enemy.size / 2;
+  var collidesLeft = this.x - this.size / 2 < enemy.x + enemy.size / 2;
+  var collidesTop = this.y - this.size / 2 < enemy.y + enemy.size / 2;
+  var collideBottom = this.y + this.size / 2 > enemy.y - enemy.size / 2;
+
+  return collidesRight && collidesLeft && collidesTop && collideBottom;
+}
+Player.prototype.loseLife = function() {
+  this.lifes--;
+  console.log(`Player lives: ${this.lifes}`);
 }
