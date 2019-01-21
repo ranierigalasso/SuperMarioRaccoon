@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 ;
   padding: 0;
   background-color: black;
 }
@@ -24,7 +24,7 @@ body {
 }
 #title {
   position: absolute;
-  top: 60%;
+  top: 20%;
   left: 35%;
   transform: translate(-50%, -50%);
   width: 25%;
@@ -32,7 +32,7 @@ body {
 }
 .splash-screen button  {
   position: absolute;
-  top: 90%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

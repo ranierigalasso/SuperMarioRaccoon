@@ -46,7 +46,6 @@ function loadGameScreen () {
 
   var onSpaceBar = function (event) {
     if(event.keyCode === 32){
-      console.log(event.keyCode);
       game.spaceBar();
     }
   }

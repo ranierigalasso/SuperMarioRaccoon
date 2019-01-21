@@ -37,7 +37,7 @@ Player.prototype.isDead = function () {
     return false;
   } 
 }
-Player.prototype.checkCollideWithEnemy = function(enemy) {
+Player.prototype.checkCollide = function(enemy) {
   var collidesRight = this.x + this.size / 2 > enemy.x - enemy.size / 2;
   var collidesLeft = this.x - this.size / 2 < enemy.x + enemy.size / 2;
   var collidesTop = this.y - this.size / 2 < enemy.y + enemy.size / 2;
@@ -47,5 +47,9 @@ Player.prototype.checkCollideWithEnemy = function(enemy) {
 }
 Player.prototype.loseLife = function() {
   this.lifes--;
+  console.log(`Player lives: ${this.lifes}`);
+}
+Player.prototype.gainLife = function() {
+  this.lifes++;
   console.log(`Player lives: ${this.lifes}`);
 }
