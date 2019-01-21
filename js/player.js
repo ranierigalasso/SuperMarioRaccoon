@@ -9,10 +9,11 @@ function Player (canvas) {
   this.x = 150;
   this.y = (canvas.height - this.size)/2; //to place mario in the middle at beggining of the game, it will change once it starts
   this.direction = 0;
-  this.speed = 5;
+  this.speed = 3.5;
   this.playerImage = new Image();
   this.playerImage.src = "./images/mario-raccoon.png";
-  
+  this.gravity = 0.05;
+  this.gravitySpeed = 0;
 }
 
 //---------------------- Methods ---------------------- 
@@ -20,7 +21,8 @@ Player.prototype.draw = function () {
   this.ctx.drawImage(this.playerImage, this.x, this.y, this.size, this.size);
 }
 Player.prototype.update = function () {
-  this.y += this.direction * this.speed; 
+  this.gravitySpeed += this.gravity; ///////gravity
+  this.y += this.direction * (this.speed + this.gravitySpeed); 
   if (this.y <= 0) {
     //if past the top of canvas push mario down
     this.y += 10;

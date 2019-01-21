@@ -12,6 +12,9 @@ body {
   padding: 0;
   background-color: wheat;
   font-family: "superMario";
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @font-face {
@@ -19,7 +22,9 @@ body {
   src: url(../fonts/superMarioFont.ttf) format("truetype");
 
 }
-
+.container {
+  max-width: 1200px;
+}
 /* ---- Splash Screen ---- */
 .splash-screen {
   margin: 0;

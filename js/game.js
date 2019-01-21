@@ -11,6 +11,7 @@ function Game (canvas) {
   this.animation;
   this.gameOver;
   this.pointCounter = 0;
+  
 }
  
 //---------------------- Methods ---------------------- 
@@ -132,8 +133,10 @@ Game.prototype.startGame = function () {
   }
   window.requestAnimationFrame(loop.bind(this));
 }
+
 Game.prototype.spaceBar = function () {
+  this.player.gravitySpeed = 0;//////////gravity
   this.player.setDirection(1);
-  this.player.y -= 100;
+  this.player.y -= 50;
 }
 
