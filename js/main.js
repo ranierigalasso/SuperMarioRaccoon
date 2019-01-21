@@ -37,6 +37,7 @@ function loadGameScreen () {
   gameScreen = buildDom(`
     <div class="game-screen">
       <span id="hearts"></span>
+      <span id="points"></span>      
       <canvas id="canvas" width="800" height="800"></canvas>
     </div>
   `);

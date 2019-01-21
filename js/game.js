@@ -44,8 +44,16 @@ Game.prototype.createStars = function () {
 Game.prototype.clearCanvas = function () {
   this.ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
+Game.prototype.updatePoints = function () {
+  var pointsTag = document.getElementById("points");
+  pointsTag.innerHTML = "";
+  var points = document.createElement("h1");
+  pointsTag.appendChild(points);
+  points.innerHTML = "HighScore: " + this.pointCounter;
+}
 Game.prototype.updateGame = function () {
   this.player.update();
+
   //randomly create new enemies and push to array
   if(Math.random() > 0.98) { //2% probability
     this.createEnemies();
@@ -82,7 +90,6 @@ Game.prototype.updateGame = function () {
     life.update();
     //check for collision and add life and delete mushroom
     if (this.player.checkCollide(life)) {
-      console.log("mushroom has collide!gained life")
       this.player.gainLife();
       life.delete();
     }
@@ -93,6 +100,7 @@ Game.prototype.updateGame = function () {
     //check for collision and delete star
     if (this.player.checkCollide(star)) {
       this.pointCounter ++;
+      this.updatePoints();
       console.log(this.pointCounter);
       star.delete();
     }
@@ -101,9 +109,10 @@ Game.prototype.updateGame = function () {
 Game.prototype.gameIsOverCallback = function (gameIsOver) {
   this.gameOver = gameIsOver;
 }
-
 Game.prototype.startGame = function () {
   this.player.updateHearts();
+  this.updatePoints();  
+
   function loop () {
     //update game instances
     this.updateGame();

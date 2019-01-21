@@ -46,7 +46,7 @@ Player.prototype.checkCollide = function(objectEncountered) {
   return collidesRight && collidesLeft && collidesTop && collideBottom;
 }
 
-Player.prototype.updateHearts = function () { //////step1
+Player.prototype.updateHearts = function () { 
   var heartsTag  = document.getElementById("hearts");
   heartsTag.innerHTML = "";
   
