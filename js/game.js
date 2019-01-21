@@ -55,7 +55,7 @@ Game.prototype.updateGame = function () {
   this.player.update();
 
   //randomly create new enemies and push to array
-  if(Math.random() > 0.98) { //2% probability
+  if(Math.random() > 0.97) { //3% probability
     this.createEnemies();
   }
   //randomly create new lifes and push to array
