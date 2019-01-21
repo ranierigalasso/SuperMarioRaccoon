@@ -7,9 +7,10 @@ function Game (canvas) {
   this.player = new Player(canvas);
   this.enemies = [];
   this.lifes = [];
-  this.hearts = []; //
+  this.stars = []; 
   this.animation;
   this.gameOver;
+  this.pointCounter = 0;
 }
  
 //---------------------- Methods ---------------------- 
@@ -21,6 +22,9 @@ Game.prototype.drawCanvas = function () {
   this.lifes.forEach(function (life) {
     life.draw();
   });
+  this.stars.forEach(function (star) { 
+    star.draw();
+  });
 }
 Game.prototype.createEnemies = function () {
   var speed = Math.random()*  4 + 3;
@@ -31,6 +35,11 @@ Game.prototype.createLifes = function () {
   var speed = Math.random()*  4 + 3;
   var y = Math.random() * canvas.height;
   this.lifes.push(new Life (canvas, y, speed));
+}
+Game.prototype.createStars = function () { 
+  var speed = Math.random()*  4 + 3;
+  var y = Math.random() * canvas.height;
+  this.stars.push(new Star (canvas, y, speed));
 }
 Game.prototype.clearCanvas = function () {
   this.ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -45,12 +54,19 @@ Game.prototype.updateGame = function () {
   if(Math.random() > 0.999) { //0.1% probability
     this.createLifes();
   }
-  //clean up enemies&lifes if not on screen anymore
+  //randomly create new stars and push to array 
+  if(Math.random() > 0.95) { //5% probability
+    this.createStars();
+  }
+  //clean up enemies&lifes&stars if not on screen anymore
   this.enemies = this.enemies.filter(function(enemy) {
     return enemy.isInScreen();
   })
   this.lifes = this.lifes.filter(function(life) {
     return life.isInScreen();
+  })
+  this.stars = this.stars.filter(function(star) { 
+    return star.isInScreen();
   })
   //update enemies array
   this.enemies.forEach(function (enemy) {
@@ -66,12 +82,21 @@ Game.prototype.updateGame = function () {
     life.update();
     //check for collision and add life and delete mushroom
     if (this.player.checkCollide(life)) {
+      console.log("mushroom has collide!gained life")
       this.player.gainLife();
       life.delete();
     }
   }.bind(this));
-  //update hearts
-  
+  //update stars array
+  this.stars.forEach(function (star) {  
+    star.update();
+    //check for collision and delete star
+    if (this.player.checkCollide(star)) {
+      this.pointCounter ++;
+      console.log(this.pointCounter);
+      star.delete();
+    }
+  }.bind(this));
 }
 Game.prototype.gameIsOverCallback = function (gameIsOver) {
   this.gameOver = gameIsOver;

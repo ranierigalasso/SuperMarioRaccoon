@@ -8,13 +8,13 @@ function Star (canvas, y, speed) {
   this.y = y;
   this.size = 50;
   this.speed = speed;
-  this.enemyImage = new Image();
-  this.enemyImage.src = "./images/starPoints.png";
+  this.starImage = new Image();
+  this.starImage.src = "./images/star.png";
 }
  
 //---------------------- Methods ---------------------- 
 Star.prototype.draw = function () {
-  this.ctx.drawImage(this.enemyImage, this.x, this.y, this.size, this.size);
+  this.ctx.drawImage(this.starImage, this.x, this.y, this.size, this.size);
 }
 Star.prototype.update = function () {
   this.x -= this.speed;

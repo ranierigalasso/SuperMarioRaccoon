@@ -6,7 +6,7 @@ function Player (canvas) {
   this.ctx = canvas.getContext('2d'); //getContext of canvas returns methods and objects for drawing on the canvas!!
   this.lifes = 3;
   this.size = 50;
-  this.x = 50;
+  this.x = 150;
   this.y = (canvas.height - this.size)/2; //to place mario in the middle at beggining of the game, it will change once it starts
   this.direction = 0;
   this.speed = 5;
@@ -37,11 +37,11 @@ Player.prototype.isDead = function () {
     return false;
   } 
 }
-Player.prototype.checkCollide = function(enemy) {
-  var collidesRight = this.x + this.size / 2 > enemy.x - enemy.size / 2;
-  var collidesLeft = this.x - this.size / 2 < enemy.x + enemy.size / 2;
-  var collidesTop = this.y - this.size / 2 < enemy.y + enemy.size / 2;
-  var collideBottom = this.y + this.size / 2 > enemy.y - enemy.size / 2;
+Player.prototype.checkCollide = function(objectEncountered) {
+  var collidesRight = this.x + this.size / 2 > objectEncountered.x - objectEncountered.size / 2;
+  var collidesLeft = this.x - this.size / 2 < objectEncountered.x + objectEncountered.size / 2;
+  var collidesTop = this.y - this.size / 2 < objectEncountered.y + objectEncountered.size / 2;
+  var collideBottom = this.y + this.size / 2 > objectEncountered.y - objectEncountered.size / 2;
 
   return collidesRight && collidesLeft && collidesTop && collideBottom;
 }
