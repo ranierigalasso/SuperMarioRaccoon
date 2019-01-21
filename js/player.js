@@ -45,11 +45,24 @@ Player.prototype.checkCollide = function(enemy) {
 
   return collidesRight && collidesLeft && collidesTop && collideBottom;
 }
-Player.prototype.loseLife = function() {
-  this.lifes--;
-  console.log(`Player lives: ${this.lifes}`);
+
+Player.prototype.updateHearts = function () { //////step1
+  var heartsTag  = document.getElementById("hearts");
+  heartsTag.innerHTML = "";
+  
+  for(var i = 0; i < this.lifes; i++) {
+    var domImage = document.createElement("img");
+    domImage.src = "./images/life.png";
+    heartsTag.appendChild(domImage);
+  }
 }
 Player.prototype.gainLife = function() {
   this.lifes++;
+  this.updateHearts();
+  console.log(`Player lives: ${this.lifes}`);
+}
+Player.prototype.loseLife = function() {
+  this.lifes--;
+  this.updateHearts();
   console.log(`Player lives: ${this.lifes}`);
 }

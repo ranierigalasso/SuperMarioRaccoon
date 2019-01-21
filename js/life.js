@@ -10,6 +10,7 @@ function Life (canvas, y, speed) {
   this.speed = speed;
   this.enemyImage = new Image();
   this.enemyImage.src = "./images/mushroom-life.png";
+  
 }
  
 //---------------------- Methods ---------------------- 
@@ -27,3 +28,4 @@ Life.prototype.isInScreen = function () {
 Life.prototype.delete = function () {
   this.x =-999;
 }
+

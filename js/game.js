@@ -7,6 +7,7 @@ function Game (canvas) {
   this.player = new Player(canvas);
   this.enemies = [];
   this.lifes = [];
+  this.hearts = []; //
   this.animation;
   this.gameOver;
 }
@@ -69,12 +70,15 @@ Game.prototype.updateGame = function () {
       life.delete();
     }
   }.bind(this));
+  //update hearts
+  
 }
 Game.prototype.gameIsOverCallback = function (gameIsOver) {
   this.gameOver = gameIsOver;
 }
 
 Game.prototype.startGame = function () {
+  this.player.updateHearts();
   function loop () {
     //update game instances
     this.updateGame();

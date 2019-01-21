@@ -36,12 +36,15 @@ function gameIsOver () {
 function loadGameScreen () {
   gameScreen = buildDom(`
     <div class="game-screen">
+      <span id="hearts"></span>
       <canvas id="canvas" width="800" height="800"></canvas>
     </div>
   `);
-
+  
   var canvas = document.getElementById("canvas");
   var game = new Game(canvas);
+  
+
   game.gameIsOverCallback(gameIsOver);
 
   var onSpaceBar = function (event) {

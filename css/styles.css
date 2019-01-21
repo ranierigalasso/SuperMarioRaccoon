@@ -8,9 +8,9 @@ html {
 }
 
 body {
-  margin: 0 ;
+  margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: wheat;
 }
 
 
@@ -50,6 +50,9 @@ body {
   to { background-position: -4000px 0; }
 }
 
+#hearts img{
+  width: 30px;
+}
 /* ---- Game Over Screen ---- */
 .game-over-screen {
   text-align: center;
