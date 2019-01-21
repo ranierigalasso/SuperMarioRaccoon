@@ -12,6 +12,8 @@ function Player (canvas) {
   this.speed = 5;
   this.playerImage = new Image();
   this.playerImage.src = "./images/mario-raccoon.png";
+  this.gravity = 0.005; 
+  this.gravitySpeed = 0;
 }
 
 //---------------------- Methods ---------------------- 
@@ -19,7 +21,8 @@ Player.prototype.draw = function () {
   this.ctx.drawImage(this.playerImage, this.x, this.y, this.size, this.size);
 }
 Player.prototype.update = function () {
-  this.y += this.direction * this.speed;
+  this.gravitySpeed += this.gravity;
+  this.y += this.direction * (this.speed + this.gravitySpeed);
   if (this.y <= 0) {
     //if past the top of canvas push mario down
     this.y += 10;
