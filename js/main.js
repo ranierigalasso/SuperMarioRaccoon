@@ -22,7 +22,7 @@ function loadSplashScreen () {
       <iframe src="./music/splash.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
       <img id="background" src="./images/splashScreen.jpg" alt="splash-screen">
-      <img id="title" src="./images/title.png" alt="splash-title">
+      <h1 id="title">SUPER MARIO RACCOON</h1>
       <button id="start-button">CLICK HERE TO START</button>
     </div>
   `);
@@ -40,9 +40,11 @@ function loadGameScreen () {
     <div class="game-screen">
       <iframe src="./music/game.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
-      <span id="hearts"></span>
-      <span id="points"></span>      
-      <canvas id="canvas" width="800" height="800"></canvas>
+      <div class="spans">
+        <span id="hearts"></span>
+        <span id="points"></span>     
+      </div> 
+      <canvas id="canvas" width="1200" height="850"></canvas>
     </div>
   `);
   

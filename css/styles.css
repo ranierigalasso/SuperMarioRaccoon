@@ -36,8 +36,10 @@ body {
 #title {
   margin: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  font-size: 500%;
+  top: 30%;
+  left: 35%;
+  color: white;
   margin-right: -50%;
   transform: translate(-50%, -50%)
 }
@@ -69,9 +71,15 @@ body {
   from { background-position: 0 0; }
   to { background-position: -4000px 0; }
 }
-
+.spans {
+  display: flex;
+  justify-content: space-between;
+}
+#points {
+  font-size: 100%;
+}
 #hearts img{
-  width: 30px;
+  width: 60px;
 }
 /* ---- Game Over Screen ---- */
 .game-over-screen {
