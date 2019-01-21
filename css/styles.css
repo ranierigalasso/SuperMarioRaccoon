@@ -8,11 +8,17 @@ html {
 }
 
 body {
-  margin: 2.5%;
+  margin: 0 2.5%;
   padding: 0;
   background-color: wheat;
+  font-family: "superMario";
 }
 
+@font-face {
+  font-family: "superMario";
+  src: url(../fonts/superMarioFont.ttf) format("truetype");
+
+}
 
 /* ---- Splash Screen ---- */
 .splash-screen {
@@ -23,10 +29,27 @@ body {
   width:100%;
 }
 #title {
-  
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 .splash-screen button  {
-  
+  font-family: "superMario";
+  background-color: red;
+  border: 5px solid black;
+  font-size: 200%;
+  border-radius: 25px;
+  margin: 0;
+  padding: 1%;
+  padding-top:2%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
 /* ---- Game Screen ---- */
@@ -55,8 +78,17 @@ body {
   height: 100%;
 }
 .game-over-screen button {
+  font-family: "superMario";
+  background-color: red;
+  border: 5px solid black;
+  font-size: 200%;
+  border-radius: 25px;
+  margin: 0;
+  padding: 1%;
+  padding-top:2%;
   position: absolute;
-  top: 90%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
