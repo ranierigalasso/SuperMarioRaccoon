@@ -100,6 +100,7 @@ Game.prototype.updateGame = function () {
     enemy.update();
     //check for collision and subtract life and delete enemy
     if (this.player.checkCollide(enemy)) {
+      this.enemySound.currentTime = 0;
       this.enemySound.play();
       this.player.loseLife();
       enemy.delete();
@@ -110,6 +111,7 @@ Game.prototype.updateGame = function () {
     life.update();
     //check for collision and add life and delete mushroom
     if (this.player.checkCollide(life)) {
+      this.lifeSound.currentTime = 0;
       this.lifeSound.play();
       this.player.gainLife();
       life.delete();
@@ -120,6 +122,7 @@ Game.prototype.updateGame = function () {
     star.update();
     //check for collision and delete star
     if (this.player.checkCollide(star)) {
+      this.starSound.currentTime = 0;
       this.starSound.play();
       this.pointCounter ++;
       this.updatePoints();
