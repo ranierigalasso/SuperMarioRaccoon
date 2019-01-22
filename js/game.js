@@ -13,6 +13,9 @@ function Game (canvas) {
   this.pointCounter = 0;
   this.seconds = 0; 
   this.interval;
+  this.enemySound = new Audio("./music/enemy.wav");
+  this.starSound = new Audio("./music/star.wav");
+  this.lifeSound = new Audio("./music/life.wav");
 }
 //---------------------- Extra -----------------------
 Game.prototype.timer = function () {
@@ -97,6 +100,7 @@ Game.prototype.updateGame = function () {
     enemy.update();
     //check for collision and subtract life and delete enemy
     if (this.player.checkCollide(enemy)) {
+      this.enemySound.play();
       this.player.loseLife();
       enemy.delete();
     }
@@ -106,6 +110,7 @@ Game.prototype.updateGame = function () {
     life.update();
     //check for collision and add life and delete mushroom
     if (this.player.checkCollide(life)) {
+      this.lifeSound.play();
       this.player.gainLife();
       life.delete();
     }
@@ -115,6 +120,7 @@ Game.prototype.updateGame = function () {
     star.update();
     //check for collision and delete star
     if (this.player.checkCollide(star)) {
+      this.starSound.play();
       this.pointCounter ++;
       this.updatePoints();
       //add to highscore if new highscore
