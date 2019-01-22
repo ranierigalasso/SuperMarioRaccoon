@@ -15,7 +15,13 @@ function buildDom (html) {
 function destroyDom (target) {
   target.innerHTML = ""; 
 }
-
+function updateHighScore () {
+  var highscoreTag = document.getElementById("highscore");
+  highscoreTag.innerHTML = "";
+  var highscore = document.createElement("h1");
+  highscoreTag.appendChild(highscore);
+  return highscore.innerHTML = "HIGHSCORE : " + window.localStorage.getItem("highscore" || "");
+}
 //---------------------- Build the 3 different screens and transitions---------------------- 
 function loadSplashScreen () {
   splashScreen = buildDom (`
@@ -27,8 +33,10 @@ function loadSplashScreen () {
       <h1 id="title2">RACCOON</h1>
       <button id="instructions-button"> GAME INSTRUCTIONS </button>
       <button id="start-button">CLICK HERE TO START</button>
+      <span id="highscore"></span>
     </div>
   `);
+  updateHighScore();
   splashScreen.querySelector("#start-button").addEventListener("click", function () {
     destroyDom(splashScreen);
     loadGameScreen();

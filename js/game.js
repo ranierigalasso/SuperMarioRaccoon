@@ -49,7 +49,7 @@ Game.prototype.updatePoints = function () {
   pointsTag.innerHTML = "";
   var points = document.createElement("h1");
   pointsTag.appendChild(points);
-  points.innerHTML = "HighScore: " + this.pointCounter;
+  points.innerHTML = "Score: " + this.pointCounter;
 }
 Game.prototype.updateGame = function () {
   this.player.update();
