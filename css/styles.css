@@ -47,7 +47,8 @@ body {
   left: 35%;
   color: red;
   margin-right: -50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  letter-spacing: 3px;
 }
 #title2 {
   margin: 0;
@@ -57,7 +58,9 @@ body {
   left: 35%;
   color: green;
   margin-right: -50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  letter-spacing: 3px;
+
 }
 #start-button  {
   font-family: "superMario";
@@ -69,7 +72,7 @@ body {
   padding: 1%;
   padding-top:2%;
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%)
@@ -84,7 +87,7 @@ body {
   padding: 1%;
   padding-top:2%;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%)
@@ -150,6 +153,39 @@ body {
   padding-top:2%;
   position: absolute;
   top: 60%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+/* ---- Instructions Screen ---- */
+.instructions-screen {
+  text-align: center;
+  margin-top: 5%;
+  border: 10px solid black;
+  border-radius: 10%;
+  width: 1100px;
+  height: 700px;
+}
+.instructions-screen h1 {
+  font-size: 500%;
+}
+.instructions-screen li {
+  list-style: none;
+  font-size: 200%;
+  line-height: 200%;
+}
+.instructions-screen button {
+  font-family: "superMario";
+  background-color: red;
+  border: 5px solid black;
+  font-size: 200%;
+  border-radius: 25px;
+  margin: 0;
+  padding: 1%;
+  padding-top:2%;
+  position: absolute;
+  top: 70%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%)

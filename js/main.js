@@ -4,6 +4,7 @@
 var splashScreen;
 var gameScreen;
 var gameOverScreen;
+var instructionScreen;
 
 //---------------------- Build and destroy current DOM ---------------------- 
 function buildDom (html) {
@@ -31,6 +32,29 @@ function loadSplashScreen () {
   splashScreen.querySelector("#start-button").addEventListener("click", function () {
     destroyDom(splashScreen);
     loadGameScreen();
+  });
+  splashScreen.querySelector("#instructions-button").addEventListener("click", function () {
+    destroyDom(splashScreen);
+    loadInstructionScreen();
+  });
+}
+function loadInstructionScreen () {
+  instructionScreen = buildDom (`
+    <div class="instructions-screen">
+      <h1>GAME INSTRUCTIONS</h1>
+      <ul>
+        <li>FLY MARIO BY PRESSING DOWN 'SPACEBAR'</li>
+        <li>MARIO HAS '3' LIVES, AVOID COLLIDING WITH 'MISSILES' IN ORDER TO NOT LOSE LIVES</li>
+        <li>THE GAME IS OVER WHEN MARIO LOSES ALL OF HIS LIVES OR FALLS INTO THE 'UNKNOWN' ...</li>
+        <li>CATCH THE 'MUSHROOMS' TO GAIN A LIFE</li>
+        <li>CATCH COINS TO SET NEW HIGHSCORES</li>
+      </ul>
+      <button id="back-button"> BACK </button>
+    </div>
+  `);
+  instructionScreen.querySelector("#back-button").addEventListener("click", function () {
+    destroyDom(instructionScreen);
+    loadSplashScreen();
   });
 }
 function gameIsOver () {
@@ -79,6 +103,10 @@ function loadGameOverScreen () {
   gameOverScreen.querySelector("#restart-button").addEventListener("click", function () {
     destroyDom(gameOverScreen);
     loadGameScreen();
+  });
+  gameOverScreen.querySelector("#home-button").addEventListener("click", function () {
+    destroyDom(gameOverScreen);
+    loadSplashScreen();
   });
 }
 
