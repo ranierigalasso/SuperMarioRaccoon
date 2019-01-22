@@ -10,13 +10,15 @@ function Game (canvas) {
   this.stars = []; 
   this.animation;
   this.gameOver;
-  this.pointCounter = 0; 
+  this.pointCounter = 0;
+  this.seconds = 0; 
+  this.interval;
 }
-//---------------------- Extra ---------------------- to add seconds and increase difficulty
-  //var seconds
-  //setInterval (function () {
-//
-  //},1000)
+//---------------------- Extra -----------------------
+Game.prototype.timer = function () {
+  this.seconds += 1;
+  console.log(this.seconds);
+}
 //---------------------- Methods ---------------------- 
 Game.prototype.drawCanvas = function () {
   this.player.draw();
@@ -58,9 +60,19 @@ Game.prototype.updatePoints = function () {
 Game.prototype.updateGame = function () {
   this.player.update();
 
-  //randomly create new enemies and push to array
-  if(Math.random() > 0.97) { //3% probability
-    this.createEnemies();
+  //randomly create new enemies and push to array 3 LEVELS
+  if(this.seconds < 30) {
+    if(Math.random() > 0.97) { //3% probability
+      this.createEnemies();
+    }
+  } else if(this.seconds < 60) {
+    if(Math.random() > 0.95) { //5% probability
+      this.createEnemies();
+    }
+  } else if(this.seconds < 90) {
+    if(Math.random() > 0.90) { //10% probability
+      this.createEnemies();
+    }
   }
   //randomly create new lifes and push to array
   if(Math.random() > 0.999) { //0.1% probability
@@ -119,7 +131,8 @@ Game.prototype.gameIsOverCallback = function (gameIsOver) {
 }
 Game.prototype.startGame = function () {
   this.player.updateHearts();
-  this.updatePoints();  
+  this.updatePoints(); 
+  this.interval = setInterval(this.timer.bind(this), 1000);
 
   function loop () {
     //update game instances
@@ -134,6 +147,7 @@ Game.prototype.startGame = function () {
     //check for gameover
     if(this.player.isDead()) {
       console.log("gameover");
+      clearInterval(this.interval);
       this.gameOver();
       window.cancelAnimationFrame(this.animation);
     }
