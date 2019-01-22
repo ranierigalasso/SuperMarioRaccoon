@@ -10,8 +10,7 @@ function Game (canvas) {
   this.stars = []; 
   this.animation;
   this.gameOver;
-  this.pointCounter = 0;
-  
+  this.pointCounter = 0; 
 }
  
 //---------------------- Methods ---------------------- 
@@ -102,7 +101,11 @@ Game.prototype.updateGame = function () {
     if (this.player.checkCollide(star)) {
       this.pointCounter ++;
       this.updatePoints();
+      //add to highscore if new highscore
       console.log(this.pointCounter);
+      if(this.pointCounter > Number(window.localStorage.getItem("highscore" || ""))) {
+        this.localScoreAdd(); 
+      }
       star.delete();
     }
   }.bind(this));
@@ -133,10 +136,11 @@ Game.prototype.startGame = function () {
   }
   window.requestAnimationFrame(loop.bind(this));
 }
-
 Game.prototype.spaceBar = function () {
-  this.player.gravitySpeed = 0;//////////gravity
+  this.player.gravitySpeed = 0;
   this.player.setDirection(1);
   this.player.y -= 65;
 }
-
+Game.prototype.localScoreAdd = function () {
+  return window.localStorage.setItem("highscore",JSON.stringify(this.pointCounter));
+}

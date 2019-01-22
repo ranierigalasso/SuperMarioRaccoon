@@ -160,6 +160,7 @@ body {
 
 /* ---- Instructions Screen ---- */
 .instructions-screen {
+  background: lightcoral;
   text-align: center;
   margin-top: 5%;
   border: 10px solid black;
