@@ -12,7 +12,11 @@ function Game (canvas) {
   this.gameOver;
   this.pointCounter = 0; 
 }
- 
+//---------------------- Extra ---------------------- to add seconds and increase difficulty
+  //var seconds
+  //setInterval (function () {
+//
+  //},1000)
 //---------------------- Methods ---------------------- 
 Game.prototype.drawCanvas = function () {
   this.player.draw();

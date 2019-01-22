@@ -34,6 +34,7 @@ function loadSplashScreen () {
       <button id="instructions-button"> GAME INSTRUCTIONS </button>
       <button id="start-button">CLICK HERE TO START</button>
       <span id="highscore"></span>
+      <span id="copyright">Designed & Developed by Ranieri Galasso</span>
     </div>
   `);
   updateHighScore();
@@ -59,6 +60,7 @@ function loadInstructionScreen () {
       </ul>
       <button id="back-button"> BACK </button>
     </div>
+    <span id="copyright">Designed & Developed by Ranieri Galasso</span>
   `);
   instructionScreen.querySelector("#back-button").addEventListener("click", function () {
     destroyDom(instructionScreen);
@@ -79,6 +81,7 @@ function loadGameScreen () {
         <span id="points"></span>     
       </div> 
       <canvas id="canvas" width="1100" height="700"></canvas>
+      <span id="copyright">Designed & Developed by Ranieri Galasso</span>
     </div>
   `);
   
@@ -106,6 +109,7 @@ function loadGameOverScreen () {
       <img src="./images/gameOverScreen.jpg" alt="game-over-screen">
       <button id="home-button"> BACK HOME </button>
       <button id="restart-button">RESTART</button>
+      <span id="copyright">Designed & Developed by Ranieri Galasso</span>
     </div>
   `);
   gameOverScreen.querySelector("#restart-button").addEventListener("click", function () {
