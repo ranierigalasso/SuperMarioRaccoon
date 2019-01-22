@@ -18,11 +18,12 @@ function destroyDom (target) {
 //---------------------- Build the 3 different screens and transitions---------------------- 
 function loadSplashScreen () {
   splashScreen = buildDom (`
-      <div class="splash-screen">
+    <div class="splash-screen">
       <iframe src="./music/splash.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
       <img id="background" src="./images/splashScreen.jpg" alt="splash-screen">
       <h1 id="title">SUPER MARIO RACCOON</h1>
+      <button id="instructions-button"> GAME INSTRUCTIONS </button>
       <button id="start-button">CLICK HERE TO START</button>
     </div>
   `);
@@ -44,7 +45,7 @@ function loadGameScreen () {
         <span id="hearts"></span>
         <span id="points"></span>     
       </div> 
-      <canvas id="canvas" width="1200" height="850"></canvas>
+      <canvas id="canvas" width="1100" height="700"></canvas>
     </div>
   `);
   
@@ -70,6 +71,7 @@ function loadGameOverScreen () {
       <iframe src="./music/gameover.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
       <img src="./images/gameOverScreen.jpg" alt="game-over-screen">
+      <button id="home-button"> BACK HOME </button>
       <button id="restart-button">RESTART</button>
     </div>
   `);

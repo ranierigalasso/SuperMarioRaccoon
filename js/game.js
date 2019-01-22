@@ -28,12 +28,12 @@ Game.prototype.drawCanvas = function () {
   });
 }
 Game.prototype.createEnemies = function () {
-  var speed = Math.random()*  4 + 3;
+  var speed = Math.random() *  4 + 5;
   var y = Math.random() * canvas.height;
   this.enemies.push(new Enemy(canvas, y, speed));
 }
 Game.prototype.createLifes = function () {
-  var speed = Math.random()*  4 + 3;
+  var speed = Math.random() *  4 + 3;
   var y = Math.random() * canvas.height;
   this.lifes.push(new Life (canvas, y, speed));
 }
@@ -137,6 +137,6 @@ Game.prototype.startGame = function () {
 Game.prototype.spaceBar = function () {
   this.player.gravitySpeed = 0;//////////gravity
   this.player.setDirection(1);
-  this.player.y -= 50;
+  this.player.y -= 65;
 }
 

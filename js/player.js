@@ -60,9 +60,11 @@ Player.prototype.updateHearts = function () {
   }
 }
 Player.prototype.gainLife = function() {
+  if(this.lifes < 3) {
   this.lifes++;
   this.updateHearts();
   console.log(`Player lives: ${this.lifes}`);
+  }
 }
 Player.prototype.loseLife = function() {
   this.lifes--;
