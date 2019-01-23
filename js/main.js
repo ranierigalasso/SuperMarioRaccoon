@@ -78,15 +78,12 @@ function loadGameScreen () {
     <div class="game-screen">
       <iframe src="./music/game.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
-      <audio controls autoplay loop style="display:none">
-        <source src="./music/game.mp3" type="audio/ogg">
-      </audio>
       <div class="spans">
         <span id="hearts"></span>
         <span id="points"></span>
         <span id="level"> </span>
       </div> 
-      <canvas id="canvas" width="1100" height="700"></canvas>
+      <canvas id="canvas" width="1000" height="600"></canvas>
       <span id="copyright">Designed & Developed by Ranieri Galasso</span>
     </div>
   `);
