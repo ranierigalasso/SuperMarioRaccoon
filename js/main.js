@@ -53,10 +53,12 @@ function loadInstructionScreen () {
       <h1>GAME INSTRUCTIONS</h1>
       <ul>
         <li>FLY MARIO BY PRESSING DOWN 'SPACEBAR'</li>
-        <li>MARIO HAS '3' LIVES, AVOID COLLIDING WITH 'MISSILES' IN ORDER TO NOT LOSE LIVES</li>
+        <li>MARIO HAS '3' LIVES </li>
+        <li>AVOID COLLIDING WITH 'MISSILES' IN ORDER TO NOT LOSE LIVES</li>
         <li>THE GAME IS OVER WHEN MARIO LOSES ALL OF HIS LIVES OR FALLS </li>
-        <li>CATCH THE 'MUSHROOMS' TO GAIN A LIFE</li>
+        <li>CATCH 'MUSHROOMS' TO GAIN A LIFE</li>
         <li>CATCH AS MANY 'STARS' AS YOU CAN, TO SET NEW HIGHSCORES</li>
+        <li>THERE ARE 3 LEVELS OF DIFFICULTY</li>
       </ul>
       <button id="back-button"> BACK </button>
     </div>
@@ -106,7 +108,8 @@ function loadGameOverScreen () {
     <div class="game-over-screen">
       <iframe src="./music/gameover.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
-      <img src="./images/gameOverScreen.jpg" alt="game-over-screen">
+      <img src="./images/gameScreen.png" alt="game-over-screen">
+      <h1>GAME OVER</h1>
       <button id="home-button"> BACK HOME </button>
       <button id="restart-button">RESTART</button>
       <span id="copyright">Designed & Developed by Ranieri Galasso</span>

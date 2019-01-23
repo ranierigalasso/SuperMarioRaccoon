@@ -13,6 +13,7 @@ function Game (canvas) {
   this.pointCounter = 0;
   this.seconds = 0; 
   this.interval;
+  this.intervalLevel;
   this.enemySound = new Audio("./music/enemy.wav");
   this.starSound = new Audio("./music/star.wav");
   this.lifeSound = new Audio("./music/life.wav");
@@ -73,9 +74,11 @@ Game.prototype.updateGame = function () {
     if(Math.random() > 0.95) { //5% probability
       this.createEnemies();
     }
-  } else if(this.seconds < 90) {
-    if(Math.random() > 0.90) { //10% probability
-      this.createEnemies();
+  } else if(this.seconds > 60) {
+    if(Math.random() > 0.95) { //5% probability but faster enemies
+        var speed = Math.random() *  4 + 8;
+        var y = Math.random() * canvas.height;
+        this.enemies.push(new Enemy(canvas, y, speed));
     }
   }
   //randomly create new lifes and push to array
@@ -144,7 +147,7 @@ Game.prototype.startGame = function () {
   this.updatePoints(); 
   this.interval = setInterval(this.timer.bind(this), 1000);
   this.levelSpan();
-  setInterval(this.levelSpan.bind(this),30000);
+  this.intervalLevel = setInterval(this.levelSpan.bind(this),30000);
 
   function loop () {
     //update game instances
@@ -160,6 +163,7 @@ Game.prototype.startGame = function () {
     if(this.player.isDead()) {
       console.log("gameover");
       clearInterval(this.interval);
+      clearInterval(this.intervalLevel);
       this.gameOver();
       window.cancelAnimationFrame(this.animation);
     }
@@ -168,8 +172,8 @@ Game.prototype.startGame = function () {
 }
 Game.prototype.spaceBar = function () {
   this.player.gravitySpeed = 0;
-  this.player.setDirection(1);
-  this.player.y -= 65;
+  this.player.setDirection(.5);
+  this.player.y -= 40;
 }
 Game.prototype.localScoreAdd = function () {
   return window.localStorage.setItem("highscore",JSON.stringify(this.pointCounter));

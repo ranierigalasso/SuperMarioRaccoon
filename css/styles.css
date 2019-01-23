@@ -17,7 +17,7 @@ body {
 }
 @font-face {
   font-family: "superMario";
-  src: url(../fonts/superMarioFont.ttf) format("truetype");
+  src: url(../fonts/SuperMario256.ttf) format("truetype");
 
 }
 .container {
@@ -98,14 +98,16 @@ body {
   transform: translate(-50%, -50%)
 }
 #highscore {
-  color: green;
+  color: black;
+  font-size: 50%;
   font-size: 100%;
   position: absolute;
   top: 75%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  letter-spacing: 5px;  
+  margin: 0;
+  padding: 0 2%;
 }
 
 
@@ -151,6 +153,14 @@ body {
   width: 1100px;
   height: 700px;
 }
+.game-over-screen h1 {
+  font-size: 500%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
 #restart-button {
   font-family: "superMario";
   background-color: red;
@@ -164,7 +174,7 @@ body {
   top: 75%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
 #home-button {
   font-family: "superMario";
@@ -198,8 +208,9 @@ body {
 }
 .instructions-screen li {
   list-style: none;
-  font-size: 200%;
+  font-size: 150%;
   line-height: 200%;
+  padding-right: 5%;
 }
 .instructions-screen button {
   font-family: "superMario";
