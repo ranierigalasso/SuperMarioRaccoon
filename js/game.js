@@ -19,12 +19,11 @@ function Game (canvas) {
   this.lifeSound = new Audio("./music/life.wav");
   this.levels = "";
 }
-//---------------------- Extra -----------------------
+
+//---------------------- Methods ---------------------- 
 Game.prototype.timer = function () {
   this.seconds += 1;
-  console.log(this.seconds);
 }
-//---------------------- Methods ---------------------- 
 Game.prototype.drawCanvas = function () {
   this.player.draw();
   this.enemies.forEach(function (enemy) {
@@ -64,7 +63,6 @@ Game.prototype.updatePoints = function () {
 }
 Game.prototype.updateGame = function () {
   this.player.update();
-
   //randomly create new enemies and push to array 3 LEVELS
   if(this.seconds < 30) {
     if(Math.random() > 0.97) { //3% probability
@@ -89,7 +87,7 @@ Game.prototype.updateGame = function () {
   if(Math.random() > 0.95) { //5% probability
     this.createStars();
   }
-  //clean up enemies&lifes&stars if not on screen anymore
+  //clean up enemies & lifes & stars if not on screen anymore
   this.enemies = this.enemies.filter(function(enemy) {
     return enemy.isInScreen();
   })
@@ -131,7 +129,6 @@ Game.prototype.updateGame = function () {
       this.pointCounter ++;
       this.updatePoints();
       //add to highscore if new highscore
-      console.log(this.pointCounter);
       if(this.pointCounter > Number(window.localStorage.getItem("highscore" || ""))) {
         this.localScoreAdd(); 
       }
@@ -150,18 +147,12 @@ Game.prototype.startGame = function () {
   this.intervalLevel = setInterval(this.levelSpan.bind(this),30000);
 
   function loop () {
-    //update game instances
     this.updateGame();
-    //clear
     this.clearCanvas();
-    //paint
     this.drawCanvas();
-
     this.animation = window.requestAnimationFrame(loop.bind(this));
-
     //check for gameover
     if(this.player.isDead()) {
-      console.log("gameover");
       clearInterval(this.interval);
       clearInterval(this.intervalLevel);
       this.gameOver();
@@ -181,13 +172,10 @@ Game.prototype.localScoreAdd = function () {
 Game.prototype.levelSpan = function () {
   if(this.seconds < 30) {
     this.levels = "LEVEL 1";
-    console.log(this.levels);
   } else if(this.seconds < 60) {
     this.levels = "LEVEL 2";
-    console.log(this.levels);
   } else if(this.seconds < 90) {
     this.levels = "LEVEL 3";
-    console.log(this.levels);
   }
   var levelsTag = document.getElementById("level");
   levelsTag.innerHTML = "";
