@@ -1,7 +1,7 @@
 "use strict";
 
 //---------------------- Constructor ---------------------- 
-function Enemy (canvas, y, speed) {
+function Enemy (canvas, y, speed, img = "./images/bullet-enemy.png") {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
   this.x = canvas.width;
@@ -9,7 +9,7 @@ function Enemy (canvas, y, speed) {
   this.size = 50;
   this.speed =speed;
   this.enemyImage = new Image();
-  this.enemyImage.src = "./images/bullet-enemy.png";
+  this.enemyImage.src = img;
 }
  
 //---------------------- Methods ---------------------- 

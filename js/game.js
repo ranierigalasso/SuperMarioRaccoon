@@ -64,22 +64,24 @@ Game.prototype.updatePoints = function () {
 Game.prototype.updateGame = function () {
   this.player.update();
   //randomly create new enemies and push to array 3 LEVELS
-  if(this.seconds < 10) {
+  if(this.seconds < 30) {
     if(Math.random() > 0.97) { //3% probability
       this.createEnemies();
     }
-  } else if(this.seconds < 15) {
+  } else if(this.seconds < 60) {
     document.querySelector("#canvas").classList.add("level2");
     if(Math.random() > 0.95) { //5% probability
-      this.createEnemies();
+      var speed = Math.random() *  4 + 5;
+      var y = Math.random() * canvas.height;
+      this.enemies.push(new Enemy(canvas, y, speed, "./images/level2-icon.png"));
     }
-  } else if(this.seconds > 15) {
+  } else if(this.seconds > 60) {
     document.querySelector("#canvas").classList.remove("level2");
-    document.querySelector("#canvas").classList.add("level3");    
+    document.querySelector("#canvas").classList.add("level3");
     if(Math.random() > 0.95) { //5% probability but faster enemies
-        var speed = Math.random() *  4 + 8;
+        var speed = Math.random() *  4 + 6;
         var y = Math.random() * canvas.height;
-        this.enemies.push(new Enemy(canvas, y, speed));
+        this.enemies.push(new Enemy(canvas, y, speed, "./images/level3-icon.png"));
     }
   }
   //randomly create new lifes and push to array

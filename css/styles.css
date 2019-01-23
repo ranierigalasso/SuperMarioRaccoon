@@ -118,14 +118,15 @@ body {
   border-radius: 10%;
   border: 10px solid black;
   background-image: url("../images/gameScreen.png");
-  -webkit-animation: slide 10s linear infinite;
+  -webkit-animation: slide 15s linear infinite;
 }
 #canvas.level2 {
   background-image: url("../images/level2.jpg");
+  -webkit-animation: slide 10s linear infinite;
 }
 #canvas.level3 {
+  -webkit-animation: slide 8s linear infinite;
   background-image: url("../images/level3.jpeg");
-  
 }
 @-webkit-keyframes slide {
   from { background-position: 0 0; }
