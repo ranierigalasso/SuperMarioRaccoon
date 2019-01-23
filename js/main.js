@@ -28,7 +28,7 @@ function loadSplashScreen () {
     <div class="splash-screen">
       <iframe src="./music/splash.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
-      <img id="background" src="./images/splashScreen.jpg" alt="splash-screen">
+      <img id="background" src="./images/gameScreen.png" alt="splash-screen">
       <h1 id="title">SUPER MARIO</h1>
       <h1 id="title2">RACCOON</h1>
       <button id="instructions-button"> GAME INSTRUCTIONS </button>

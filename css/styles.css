@@ -50,7 +50,7 @@ body {
   position: absolute;
   font-size: 700%;
   top: 30%;
-  left: 35%;
+  left: 50%;
   color: red;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -61,7 +61,7 @@ body {
   position: absolute;
   font-size: 500%;
   top: 42.5%;
-  left: 35%;
+  left: 50%;
   color: green;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -99,20 +99,17 @@ body {
   transform: translate(-50%, -50%)
 }
 #highscore {
-  color: red;
+  color: green;
   font-size: 100%;
   position: absolute;
   top: 75%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  letter-spacing: 3px;
-  background: black;
-  border-radius: 10%;
-  padding: .2% 2%;
-  padding-top: .6%;
-  
+  letter-spacing: 5px;  
 }
+
+
 /* ---- Game Screen ---- */
 .game-screen {
   text-align: center;
@@ -132,10 +129,10 @@ body {
   justify-content: space-evenly;
 }
 #points {
-  font-size: 100%;
+  font-size: 80%;
 }
 #hearts img{
-  width: 60px;
+  width: 40px;
 }
 /* ---- Game Over Screen ---- */
 .game-over-screen {
