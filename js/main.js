@@ -78,6 +78,9 @@ function loadGameScreen () {
     <div class="game-screen">
       <iframe src="./music/game.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
+      <audio controls autoplay loop style="display:none">
+        <source src="./music/game.mp3" type="audio/ogg">
+      </audio>
       <div class="spans">
         <span id="hearts"></span>
         <span id="points"></span>
