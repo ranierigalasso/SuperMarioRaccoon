@@ -1,7 +1,7 @@
 "use strict";
 
 //---------------------- Constructor ---------------------- 
-function Enemy (canvas, y, speed, img = "./images/bullet-enemy.png") {
+function Enemy (canvas, y, speed, img = "./images/level1-icon.png") {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
   this.x = canvas.width;
