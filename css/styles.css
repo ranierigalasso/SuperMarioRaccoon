@@ -120,6 +120,13 @@ body {
   background-image: url("../images/gameScreen.png");
   -webkit-animation: slide 10s linear infinite;
 }
+#canvas.level2 {
+  background-image: url("../images/level2.jpg");
+}
+#canvas.level3 {
+  background-image: url("../images/level3.jpeg");
+  
+}
 @-webkit-keyframes slide {
   from { background-position: 0 0; }
   to { background-position: -4000px 0; }
