@@ -78,7 +78,8 @@ function loadGameScreen () {
       </iframe> 
       <div class="spans">
         <span id="hearts"></span>
-        <span id="points"></span>     
+        <span id="points"></span>
+        <span id="level"> </span>
       </div> 
       <canvas id="canvas" width="1100" height="700"></canvas>
       <span id="copyright">Designed & Developed by Ranieri Galasso</span>
@@ -88,7 +89,6 @@ function loadGameScreen () {
   var canvas = document.getElementById("canvas");
   var game = new Game(canvas);
   
-
   game.gameIsOverCallback(gameIsOver);
 
   var onSpaceBar = function (event) {

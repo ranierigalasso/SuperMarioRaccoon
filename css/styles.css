@@ -6,7 +6,6 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
 body {
   margin: 0 2.5%;
   padding: 0;
@@ -16,7 +15,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 @font-face {
   font-family: "superMario";
   src: url(../fonts/superMarioFont.ttf) format("truetype");
@@ -25,7 +23,6 @@ body {
 .container {
   margin-top:2%;
   max-width: 1200px;
-
 }
 #copyright {
   display: flex;
@@ -33,6 +30,8 @@ body {
   padding-top: 5%;
   font-size: 150%;
 }
+
+
 /* ---- Splash Screen ---- */
 .splash-screen {
   margin: 0;
@@ -129,11 +128,18 @@ body {
   justify-content: space-evenly;
 }
 #points {
-  font-size: 80%;
+  font-size: 65%;
 }
 #hearts img{
-  width: 40px;
+  width: 35px;
 }
+#level {
+  font-size: 65%;
+  padding: 0;
+  margin: 0;
+}
+
+
 /* ---- Game Over Screen ---- */
 .game-over-screen {
   text-align: center;
@@ -175,6 +181,7 @@ body {
   margin-right: -50%;
   transform: translate(-50%, -50%)
 }
+
 
 /* ---- Instructions Screen ---- */
 .instructions-screen {

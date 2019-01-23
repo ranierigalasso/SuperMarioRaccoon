@@ -16,6 +16,7 @@ function Game (canvas) {
   this.enemySound = new Audio("./music/enemy.wav");
   this.starSound = new Audio("./music/star.wav");
   this.lifeSound = new Audio("./music/life.wav");
+  this.levels = "";
 }
 //---------------------- Extra -----------------------
 Game.prototype.timer = function () {
@@ -142,6 +143,8 @@ Game.prototype.startGame = function () {
   this.player.updateHearts();
   this.updatePoints(); 
   this.interval = setInterval(this.timer.bind(this), 1000);
+  this.levelSpan();
+  setInterval(this.levelSpan.bind(this),30000);
 
   function loop () {
     //update game instances
@@ -170,4 +173,21 @@ Game.prototype.spaceBar = function () {
 }
 Game.prototype.localScoreAdd = function () {
   return window.localStorage.setItem("highscore",JSON.stringify(this.pointCounter));
+}
+Game.prototype.levelSpan = function () {
+  if(this.seconds < 30) {
+    this.levels = "LEVEL 1";
+    console.log(this.levels);
+  } else if(this.seconds < 60) {
+    this.levels = "LEVEL 2";
+    console.log(this.levels);
+  } else if(this.seconds < 90) {
+    this.levels = "LEVEL 3";
+    console.log(this.levels);
+  }
+  var levelsTag = document.getElementById("level");
+  levelsTag.innerHTML = "";
+  var level = document.createElement("h1");
+  levelsTag.appendChild(level);
+  level.innerHTML = this.levels;
 }
