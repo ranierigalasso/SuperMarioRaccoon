@@ -139,6 +139,7 @@ body {
 .spans {
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
 }
 #points {
   font-size: .75rem;
@@ -160,7 +161,6 @@ body {
   .spans {
     display: flex;
     justify-content: space-around;
-    width: 100%;
   }
   #points {
     font-size: .3rem;

@@ -49,6 +49,8 @@ function loadSplashScreen () {
 function loadInstructionScreen () {
   instructionScreen = buildDom (`
     <div class="instructions-screen">
+      <iframe src="./music/instructions.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+      </iframe> 
       <h1>GAME INSTRUCTIONS</h1>
       <ul>
         <li>SUPER MARIO HAS '3' LIVES TO START WITH </li>
