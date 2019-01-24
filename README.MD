@@ -3,7 +3,7 @@
 ## Description
 SUPER MARIO RACCOON is a simple but addictive game where the player needs to fly Mario accross an array of obstacles, which
 if collision occurs a life is taken away. The player can also collect "stars" (each coin has the value of +1) to achieve new highscores
-and collect "mushrooms" (each mushroom has the value of +1) to increase its current lives.The player will start with 3 lives and will lose only once it has 0 lives.
+and collect "mushrooms" (each mushroom has the value of +1 , to a maximum of 3 lives).The player will start with 3 lives and the game will end only once it has 0 lives or falls below the canvas.
 
 ## MVP (DOM - CANVAS)
 *CANVAS*
@@ -134,13 +134,12 @@ Definition of the different states and their transition (transition functions)
 
 ### Git
 URls for the project repo and deploy
-[Link Repo]()
-[Link Deploy]()
+[Link Repo](https://github.com/ranierigalasso/SuperMarioRaccoon)
+[Link Deploy](https://ranierigalasso.github.io/SuperMarioRaccoon/)
 
 
 ### Slides
 URls for the project presentation (slides)
-[Link Slides.com]()
+[Link Slides.com](https://slides.com/ranierigalasso/my-name-is-ranieri-galasso)
 
 
-## Development 
