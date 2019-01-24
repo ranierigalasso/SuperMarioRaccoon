@@ -97,11 +97,13 @@ function loadGameScreen () {
       game.spaceBar();
     }
   }
-  canvas.ontouchstart = function (event) {////////
+  
+  //Touch functionality
+  canvas.ontouchstart = function (event) {
     game.spaceBar();
   }
+
   document.addEventListener("keydown", onSpaceBar);
-  //canvas.addEventListener("ontouchstart",ontouchstart);//////----------------------------
   game.startGame();
 
 }

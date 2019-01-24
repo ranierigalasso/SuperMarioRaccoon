@@ -87,7 +87,7 @@ body {
 }
 @media (max-width: 450px) {
   .splash-screen {
-    width:350px;
+    width:325px;
     height: 300px;
     border: none;
   }
@@ -150,6 +150,10 @@ body {
   .game-screen {
     border: none;
   }
+  #canvas {
+    height: 300px;
+    width: 325px;
+  }
   #points {
     font-size: .3rem;
   }
@@ -196,7 +200,7 @@ body {
 }
 @media (max-width: 450px) {
   .game-over-screen {
-    width:350px;
+    width:325px;
     height: 300px;
     border: none;
   }
@@ -243,9 +247,10 @@ body {
 }
 @media (max-width: 450px) {
   .instructions-screen {
-    width:350px;
+    width:325px;
     height: 300px;
     border: none;
+    justify-content: center;
   }
   .instructions-screen h1 {
     font-size: 2rem;
@@ -253,7 +258,7 @@ body {
   .instructions-screen li {
     list-style: none;
     font-size: .5rem;
-    line-height: 1rem;
+    line-height: .5rem;
   }
   .instructions-screen button {
     font-size: 1rem;
