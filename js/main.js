@@ -80,13 +80,13 @@ function loadGameScreen () {
       <span id="level"> </span>
     </div> 
     <div class="game-screen">
-      <iframe src="./music/game.mp3" allow="autoplay" style="display:none" id="iframeAudio">
-      </iframe> 
+      <audio controls autoplay loop style="display:none">
+        <source src="./music/game.mp3" type="audio/ogg" >
+      </audio>
       <canvas id="canvas" width="900" height="600"></canvas>
     </div>
     <span id="copyright">Designed & Developed by Ranieri Galasso</span>
   `);
-  
   var canvas = document.getElementById("canvas");
   var game = new Game(canvas);
   
