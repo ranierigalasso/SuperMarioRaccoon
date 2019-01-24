@@ -22,49 +22,41 @@ body {
 
 }
 .container {
-  margin-top:2%;
-  max-width: 1200px;
+  max-width: 900px;
+  text-align: center;
 }
 #copyright {
   display: flex;
   justify-content: center;
-  padding-top: 2%;
-  font-size: 150%;
+  margin-top: 2%;
+  font-size: 1rem;
 }
 
 
 /* ---- Splash Screen ---- */
 .splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: url("../images/gameScreen.png");
   margin: 0;
   padding:0;
-  margin-top:4%;
-}
-#background {
-  width:1000px;
+  width:900px;
   height: 600px;
   border-radius: 10%;
   border: 10px solid black;
+  text-align: center;
 }
 #title {
   margin: 0;
-  position: absolute;
-  font-size: 700%;
-  top: 20%;
-  left: 50%;
+  font-size: 5rem;
   color: red;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
   letter-spacing: 3px;
 }
 #title2 {
   margin: 0;
-  position: absolute;
-  font-size: 500%;
-  top: 32.5%;
-  left: 50%;
+  font-size: 3.5rem;
   color: green;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
   letter-spacing: 3px;
 
 }
@@ -72,59 +64,40 @@ body {
   font-family: "superMario";
   background-color: red;
   border: 5px solid black;
-  font-size: 200%;
+  font-size: 2rem;
   border-radius: 25px;
-  margin: 0;
+  margin: 0 auto;
   padding: 1%;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
 }
 #instructions-button {
   font-family: "superMario";
   background-color: red;
   border: 5px solid black;
-  font-size: 200%;
+  font-size: 2rem;
   border-radius: 25px;
-  margin: 0;
+  margin: 0 auto;
   padding: 1%;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
 }
 #highscore {
   color: black;
-  font-size: 50%;
-  font-size: 100%;
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  font-size: 1rem;
   margin: 0;
-  padding: 0 2%;
 }
 
 
 /* ---- Game Screen ---- */
 .game-screen {
   text-align: center;
-}
-#canvas {
   border-radius: 10%;
   border: 10px solid black;
   background-image: url("../images/gameScreen.png");
   -webkit-animation: slide 15s linear infinite;
 }
-#canvas.level2 {
+.game-screen.level2 {
   background-image: url("../images/level2.jpg");
   -webkit-animation: slide 10s linear infinite;
 }
-#canvas.level3 {
+.game-screen.level3 {
   -webkit-animation: slide 8s linear infinite;
   background-image: url("../images/level3.jpeg");
 }
@@ -132,103 +105,86 @@ body {
   from { background-position: 0 0; }
   to { background-position: -4000px 0; }
 }
+#canvas {
+  height: 100%;
+  width: 100%;
+}
 .spans {
   display: flex;
   justify-content: space-evenly;
 }
 #points {
-  font-size: 65%;
+  font-size: .75rem;
 }
 #hearts img{
-  width: 35px;
+  width: 40px;
 }
 #level {
-  font-size: 65%;
-  padding: 0;
-  margin: 0;
+  font-size: .75rem;
 }
 
 
 /* ---- Game Over Screen ---- */
 .game-over-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: url("../images/gameScreen.png");
   text-align: center;
-  margin-top: 4%;
-}
-.game-over-screen img {
   border: 10px solid black;
   border-radius: 10%;
-  width: 1000px;
+  width: 900px;
   height: 600px;
 }
 .game-over-screen h1 {
-  font-size: 500%;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  font-size: 5rem;
 }
 #restart-button {
   font-family: "superMario";
   background-color: red;
   border: 5px solid black;
-  font-size: 200%;
+  font-size: 2rem;
   border-radius: 25px;
-  margin: 0;
+  margin: 0 auto;
   padding: 1%;
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
 }
 #home-button {
   font-family: "superMario";
   background-color: red;
   border: 5px solid black;
-  font-size: 200%;
+  font-size: 2rem;
   border-radius: 25px;
-  margin: 0;
+  margin: 0 auto;
   padding: 1%;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
 }
 
 
 /* ---- Instructions Screen ---- */
 .instructions-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background: lightcoral;
   text-align: center;
-  margin-top: 4%;
   border: 10px solid black;
   border-radius: 10%;
-  width: 1000px;
+  width: 900px;
   height: 600px;
 }
 .instructions-screen h1 {
   color: green;
-  font-size: 250%;
+  font-size: 3rem;
 }
 .instructions-screen li {
   list-style: none;
-  font-size: 150%;
-  line-height: 200%;
-  padding-right: 5%;
+  font-size: 1rem;
 }
 .instructions-screen button {
   font-family: "superMario";
   background-color: red;
   border: 5px solid black;
-  font-size: 100%;
+  font-size: 2rem;
   border-radius: 25px;
-  margin: .5%;
+  margin: 0 auto;
   padding: 1%;
-  position: absolute;
-  top: 67.5%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
 }

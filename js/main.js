@@ -28,14 +28,13 @@ function loadSplashScreen () {
     <div class="splash-screen">
       <iframe src="./music/splash.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
-      <img id="background" src="./images/gameScreen.png" alt="splash-screen">
       <h1 id="title">SUPER MARIO</h1>
       <h1 id="title2">RACCOON</h1>
       <button id="instructions-button"> GAME INSTRUCTIONS </button>
       <button id="start-button">CLICK HERE TO START</button>
       <span id="highscore"></span>
-      <span id="copyright">Designed & Developed by Ranieri Galasso</span>
     </div>
+    <span id="copyright">Designed & Developed by Ranieri Galasso</span>
   `);
   updateHighScore();
   splashScreen.querySelector("#start-button").addEventListener("click", function () {
@@ -75,17 +74,17 @@ function gameIsOver () {
 }
 function loadGameScreen () {
   gameScreen = buildDom(`
+    <div class="spans">
+      <span id="hearts"></span>
+      <span id="points"></span>
+      <span id="level"> </span>
+    </div> 
     <div class="game-screen">
       <iframe src="./music/game.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
-      <div class="spans">
-        <span id="hearts"></span>
-        <span id="points"></span>
-        <span id="level"> </span>
-      </div> 
-      <canvas id="canvas" width="1000" height="600"></canvas>
-      <span id="copyright">Designed & Developed by Ranieri Galasso</span>
+      <canvas id="canvas" width="900" height="600"></canvas>
     </div>
+    <span id="copyright">Designed & Developed by Ranieri Galasso</span>
   `);
   
   var canvas = document.getElementById("canvas");
@@ -108,12 +107,11 @@ function loadGameOverScreen () {
     <div class="game-over-screen">
       <iframe src="./music/gameover.mp3" allow="autoplay" style="display:none" id="iframeAudio">
       </iframe> 
-      <img src="./images/gameScreen.png" alt="game-over-screen">
       <h1>GAME OVER</h1>
       <button id="home-button"> BACK HOME </button>
       <button id="restart-button">RESTART</button>
-      <span id="copyright">Designed & Developed by Ranieri Galasso</span>
     </div>
+    <span id="copyright">Designed & Developed by Ranieri Galasso</span>
   `);
   gameOverScreen.querySelector("#restart-button").addEventListener("click", function () {
     destroyDom(gameOverScreen);

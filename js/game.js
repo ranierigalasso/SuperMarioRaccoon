@@ -69,15 +69,15 @@ Game.prototype.updateGame = function () {
       this.createEnemies();
     }
   } else if(this.seconds < 60) {
-    document.querySelector("#canvas").classList.add("level2");
+    document.querySelector(".game-screen").classList.add("level2");
     if(Math.random() > 0.95) { //5% probability
       var speed = Math.random() *  4 + 5;
       var y = Math.random() * canvas.height;
       this.enemies.push(new Enemy(canvas, y, speed, "./images/level2-icon.png"));
     }
   } else if(this.seconds > 60) {
-    document.querySelector("#canvas").classList.remove("level2");
-    document.querySelector("#canvas").classList.add("level3");
+    document.querySelector(".game-screen").classList.remove("level2");
+    document.querySelector(".game-screen").classList.add("level3");
     if(Math.random() > 0.95) { //5% probability but faster enemies
         var speed = Math.random() *  4 + 6;
         var y = Math.random() * canvas.height;
