@@ -99,6 +99,7 @@ function loadGameScreen () {
   }
 
   document.addEventListener("keydown", onSpaceBar);
+  document.addEventListener("touchstart",game.spaceBar());//////----------------------------
   game.startGame();
 
 }
