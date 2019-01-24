@@ -97,9 +97,10 @@ function loadGameScreen () {
       game.spaceBar();
     }
   }
-  
+
   //Touch functionality
-  canvas.ontouchstart = function (event) {
+  var body = document.getElementById("body");
+  body.ontouchstart = function (event) {
     game.spaceBar();
   }
 

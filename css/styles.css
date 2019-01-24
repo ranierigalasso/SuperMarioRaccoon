@@ -98,10 +98,12 @@ body {
     font-size: 1.5rem;
   }
   #start-button {
-    font-size: 1rem
+    font-size: 1rem;
+    margin: 0 auto;    
   }
   #instructions-button {
-    font-size: 1rem
+    font-size: 1rem;
+    margin: 0 auto;
   }
   #highscore {
     font-size: .5rem
@@ -213,9 +215,11 @@ body {
   }
   #restart-button {
     font-size: 1rem;
+    margin: 0 auto;
   }
   #home-button {
     font-size: 1rem;
+    margin: 0 auto;
   }
 }
 
@@ -266,6 +270,7 @@ body {
   }
   .instructions-screen button {
     font-size: 1rem;
+    margin: 0 auto;
   }
 
 }
