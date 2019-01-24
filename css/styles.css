@@ -27,6 +27,7 @@ body {
   justify-content: center;
   max-width: 900px;
   text-align: center;
+  margin-top:3rem;
 }
 #copyright {
   display: flex;
