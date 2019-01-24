@@ -12,6 +12,7 @@ body {
   background-color: wheat;
   font-family: "superMario";
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -158,7 +159,8 @@ body {
   }
   .spans {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    width: 100%;
   }
   #points {
     font-size: .3rem;
@@ -272,5 +274,13 @@ body {
     font-size: 1rem;
     margin: 0 auto;
   }
-
+  body{
+    height: 650px;
+    justify-content: flex-start;
+    margin: 0 auto;
+  }
+  .container{
+    margin:0 auto;
+    align-items: center;
+  }
 }
