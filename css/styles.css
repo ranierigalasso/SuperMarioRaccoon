@@ -35,7 +35,6 @@ body {
   font-size: 1rem;
 }
 
-
 /* ---- Splash Screen ---- */
 .splash-screen {
   display: flex;
@@ -86,7 +85,29 @@ body {
   font-size: 1rem;
   margin: 0;
 }
+@media (max-width: 450px) {
+  .splash-screen {
+    width:350px;
+    height: 300px;
+    border: none;
+  }
+  #title {
+    font-size: 2rem;
+  }
+  #title2 {
+    font-size: 1.5rem;
+  }
+  #start-button {
+    font-size: 1rem
+  }
+  #instructions-button {
+    font-size: 1rem
+  }
+  #highscore {
+    font-size: .5rem
 
+  }
+}
 
 /* ---- Game Screen ---- */
 .game-screen {
@@ -98,10 +119,10 @@ body {
 }
 .game-screen.level2 {
   background-image: url("../images/level2.jpg");
-  -webkit-animation: slide 10s linear infinite;
+  -webkit-animation: slide 12.5s linear infinite;
 }
 .game-screen.level3 {
-  -webkit-animation: slide 8s linear infinite;
+  -webkit-animation: slide 10s linear infinite;
   background-image: url("../images/level3.jpeg");
 }
 @-webkit-keyframes slide {
@@ -125,7 +146,20 @@ body {
 #level {
   font-size: .75rem;
 }
-
+@media (max-width: 450px) {
+  .game-screen {
+    border: none;
+  }
+  #points {
+    font-size: .3rem;
+  }
+  #hearts img{
+    width: 20px;
+  }
+  #level {
+    font-size: .3rem;
+  }
+}
 
 /* ---- Game Over Screen ---- */
 .game-over-screen {
@@ -160,7 +194,22 @@ body {
   margin: 0 auto;
   padding: 1%;
 }
-
+@media (max-width: 450px) {
+  .game-over-screen {
+    width:350px;
+    height: 300px;
+    border: none;
+  }
+  .game-over-screen h1 {
+    font-size: 2rem;
+  }
+  #restart-button {
+    font-size: 1rem;
+  }
+  #home-button {
+    font-size: 1rem;
+  }
+}
 
 /* ---- Instructions Screen ---- */
 .instructions-screen {
@@ -191,4 +240,23 @@ body {
   border-radius: 25px;
   margin: 0 auto;
   padding: 1%;
+}
+@media (max-width: 450px) {
+  .instructions-screen {
+    width:350px;
+    height: 300px;
+    border: none;
+  }
+  .instructions-screen h1 {
+    font-size: 2rem;
+  }
+  .instructions-screen li {
+    list-style: none;
+    font-size: .5rem;
+    line-height: 1rem;
+  }
+  .instructions-screen button {
+    font-size: 1rem;
+  }
+
 }
